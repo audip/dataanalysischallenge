@@ -3,12 +3,15 @@
 import os
 import zipfile
 import operator
+import requests
 
 dictionary_namecount = {}
 progress = 0
 total_names = 5647426
+archive_link = "http://www.ssa.gov/oact/babynames/state/namesbystate.zip"
+file_record = requests.get(archive_link)
 
-with zipfile.ZipFile('namesbystate.zip') as namesbystate:
+with zipfile.ZipFile(file_record) as namesbystate:
     for filename in namesbystate.namelist():
         if not os.path.isdir(filename) and filename != 'StateReadMe.pdf':
             # if m.endswith('.mp3'):
