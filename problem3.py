@@ -12,11 +12,11 @@ class industrialDetails(object):
             raw = rawData.strip()
             parts = raw.split('\t')
             # Parses values into class variables
-            for part in parts:
-                if 'E-' in part:
-                    value = part.rstrip('\r\t').split('E-')
-                    powerOf = pow(10,(-1*int(value[1])))
-                    part = float(value[0]) * powerOf
+            # for part in parts:
+            #     if 'E-' in part:
+            #         value = part.rstrip('\r\t').split('E-')
+            #         powerOf = pow(10,(-1*int(value[1])))
+            #         part = float(value[0]) * powerOf
 
             self.time = float(parts[0].strip())
             self.temperature = float(parts[1].strip())
@@ -59,12 +59,25 @@ def dataUnload(file_name):
                         lineToRead = 1
                         # Skips the StartOfData line
                         continue
+                    # Starts reading line by line
                     if lineToRead == 1:
                         counter += 1
-                        industry = industrialDetails(line)
-                        industry.printsOutput()
-                    if counter > 10:
-                        break
+                        raw = line.strip()
+                        parts = line.rstrip("\n").split("\t")
+                        # Checks for exponential data e.g.: 3.32E-4
+                        for part in parts:
+                            if 'E-' in part:
+                                value = part.rstrip('\r\t').split('E-')
+                                powerOf = pow(10,(-1*int(value[1])))
+                                part = float(value[0]) * powerOf
+                        # Check for time can never be negative
+                        time = parts[0]
+                        if float(time) > 0.0:
+                            print time
+                            industry = industrialDetails(line)
+                            # industry.printsOutput()
+                    # if counter > 10:
+                    #     break
 
 def main():
     print "1. Main program initiated"
