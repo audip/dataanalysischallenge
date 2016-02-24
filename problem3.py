@@ -44,7 +44,9 @@ class industrialDetails(object):
         return self.pressure
 
 def dataUnload(file_name):
-    # Unzips the file and return babies born in 2013
+    # Unzips the file and return industrial data
+    temperatureList = []
+    timeList = []
     counter = 0
     lineToRead = 0
     for filename in os.listdir(path):
@@ -70,14 +72,18 @@ def dataUnload(file_name):
                                 value = part.rstrip('\r\t').split('E-')
                                 powerOf = pow(10,(-1*int(value[1])))
                                 part = float(value[0]) * powerOf
-                        # Check for time can never be negative
+                        # Checks as time can never be negative
                         time = parts[0]
                         if float(time) > 0.0:
-                            print time
-                            industry = industrialDetails(line)
+                            industrialData = industrialDetails(line)
+                            timeList.append(industrialData.getTime())
+                            temperatureList.append(industrialData.getTemperature())
                             # industry.printsOutput()
-                    # if counter > 10:
-                    #     break
+                    if counter > 10:
+                        break
+
+    print timeList
+    print temperatureList
 
 def main():
     print "1. Main program initiated"
