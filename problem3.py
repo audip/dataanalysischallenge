@@ -2,20 +2,29 @@
 
 import os
 import operator
+import math
 
 fixtureName = 'fixtures/Sample_DSC_Data.txt'
 path = 'fixtures/'
 
 class industrialDetails(object):
     def __init__(self, rawData):
-            parts = rawData.split(' ')
+            raw = rawData.strip()
+            parts = raw.split('\t')
             # Parses values into class variables
-            self.time = int(parts[0].strip())
-            self.temperature = int(parts[1].strip())
-            self.heatFlow = int(parts[2].strip())
-            self.heatCapacity = int(parts[3].strip())
-            self.samplePurgeFlow = int(parts[4].strip())
-            self.pressure = int(parts[5].strip())
+            for part in parts:
+                if 'E-' in part:
+                    value = part.rstrip('\r\t').split('E-')
+                    powerOf = pow(10,(-1*int(value[1])))
+                    part = float(value[0]) * powerOf
+
+            self.time = float(parts[0].strip())
+            self.temperature = float(parts[1].strip())
+            self.heatFlow = float(parts[2].strip())
+            self.heatCapacity = float(parts[3].strip())
+            self.samplePurgeFlow = float(parts[4].strip())
+            self.pressure = float(parts[5].strip())
+
 
     def printsOutput(self):
         print str(self.time)+","+str(self.temperature)+","+str(self.heatFlow)+","+str(self.heatCapacity)+","+str(self.samplePurgeFlow)+","+str(self.pressure)
@@ -52,8 +61,9 @@ def dataUnload(file_name):
                         continue
                     if lineToRead == 1:
                         counter += 1
-                        print line
-                    if counter > 100:
+                        industry = industrialDetails(line)
+                        industry.printsOutput()
+                    if counter > 10:
                         break
 
 def main():
