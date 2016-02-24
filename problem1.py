@@ -46,26 +46,27 @@ def dataUnload(file_name):
                     for line in f:
                         # processing line by line
                         baby = babyDetails(line)
-                        if baby.getName() not in dictionary_namecount:
-                            dictionary_namecount[baby.getName()] = baby.getBirthCount()
-                        else:
-                            dictionary_namecount[baby.getName()] += baby.getBirthCount()
+                        if int(baby.getYear()) >= 1915:
+                            if baby.getName() not in dictionary_namecount:
+                                dictionary_namecount[baby.getName()] = baby.getBirthCount()
+                            else:
+                                dictionary_namecount[baby.getName()] += baby.getBirthCount()
     print "3. File read completed"
     return dictionary_namecount
 
-def top5(dict_namecount = {}):
+def top(dict_namecount = {}):
     """ Takes dictionary as input and prints top five name """
     print "4. Sorting the list to find the top 5"
     sorted_list = sorted(dict_namecount.items(), key=operator.itemgetter(1))
     sorted_list.reverse()
-    for loop_var in range(5):
+    for loop_var in range(1):
         print sorted_list[loop_var]
 
 def main():
     print "5 steps in total"
     print "1. Main program initiated"
     dictionary_data = dataUnload(fixtureName)
-    top5(dictionary_data)
+    top(dictionary_data)
     print "5. Main program finished"
 
 if __name__ == "__main__":main()

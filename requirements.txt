@@ -1,4 +1,4 @@
-urllib
-zipfile
 requests
-operator
+plotly
+ipython
+anaconda
