@@ -5,7 +5,6 @@ import zipfile
 import operator
 
 dictionary_namecount = {}
-bornInYear = []
 fixtureName = 'fixtures/namesbystate.zip'
 
 class babyDetails(object):
@@ -19,9 +18,9 @@ class babyDetails(object):
             self.birthCount = int(parts[4].strip())
 
     def printsOutput(self):
-        print self.state+"::"+self.gender+"::"+self.year+"::"+self.name+"::"+str(self.birthCount)
+        print self.state+","+self.gender+","+self.year+","+self.name+","+str(self.birthCount)
     def getAll(self):
-        return self.state+"::"+self.gender+"::"+self.year+"::"+self.name+"::"+str(self.birthCount)
+        return self.state+","+self.gender+","+self.year+","+self.name+","+str(self.birthCount)
     def getName(self):
         return self.name
     def getState(self):
@@ -34,11 +33,11 @@ class babyDetails(object):
         return self.birthCount
 
 def dataUnload(file_name, yearOfBirth):
+    bornInYear = []
     with zipfile.ZipFile(file_name) as namesbystate:
         for filename in namesbystate.namelist():
             extension = os.path.splitext(filename)[1][1:].strip().lower()
             if not os.path.isdir(filename) and extension == 'txt':
-                # if m.endswith('.mp3'):
                 # read the file
                 with namesbystate.open(filename) as f:
                     for line in f:
@@ -46,12 +45,18 @@ def dataUnload(file_name, yearOfBirth):
                         baby = babyDetails(line)
                         if baby.getYear() in yearOfBirth:
                             bornInYear.append(baby.getAll())
+    return bornInYear
 
+def processingData(babyList = []):
+    for babyData in babyList:
+        baby = babyDetails(str(babyData))
+        print baby.getAll()
 
 def main():
-    dataUnload(fixtureName, '2013')
-    for item in bornInYear:
-        print item
+    babyBornInYear = dataUnload(fixtureName, '2013')
+    processingData(babyBornInYear)
+    # for item in bornInYear:
+    #     print item
 
 if __name__ == "__main__":main()
 
