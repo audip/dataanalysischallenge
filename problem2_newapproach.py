@@ -48,10 +48,12 @@ def dataUnload(file_name, yearOfBirth):
                             bornInYear.append(baby.getAll())
 
 
-dataUnload(fixtureName, '2013')
-for item in bornInYear:
-    print item
+def main():
+    dataUnload(fixtureName, '2013')
+    for item in bornInYear:
+        print item
 
+if __name__ == "__main__":main()
 
 # sorted_list = sorted(dictionary_namecount.items(), key=operator.itemgetter(1))
 # sorted_list.reverse()
