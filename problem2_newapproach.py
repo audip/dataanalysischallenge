@@ -36,14 +36,15 @@ class babyDetails(object):
 def dataUnload(file_name, yearOfBirth):
     with zipfile.ZipFile(file_name) as namesbystate:
         for filename in namesbystate.namelist():
-            if not os.path.isdir(filename) and filename != 'StateReadMe.pdf':
+            extension = os.path.splitext(filename)[1][1:].strip().lower()
+            if not os.path.isdir(filename) and extension == 'txt':
                 # if m.endswith('.mp3'):
                 # read the file
                 with namesbystate.open(filename) as f:
                     for line in f:
                         # processing line by line
                         baby = babyDetails(line)
-                        if baby.getYear() in '2013':
+                        if baby.getYear() in yearOfBirth:
                             bornInYear.append(baby.getAll())
 
 
