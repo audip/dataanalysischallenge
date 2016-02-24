@@ -5,6 +5,8 @@ import zipfile
 import operator
 
 dictionary_namecount = {}
+bornInYear = []
+fixtureName = 'fixtures/namesbystate.zip'
 
 class babyDetails(object):
     def __init__(self, rawData):
@@ -18,7 +20,8 @@ class babyDetails(object):
 
     def printsOutput(self):
         print self.state+"::"+self.gender+"::"+self.year+"::"+self.name+"::"+str(self.birthCount)
-
+    def getAll(self):
+        return self.state+"::"+self.gender+"::"+self.year+"::"+self.name+"::"+str(self.birthCount)
     def getName(self):
         return self.name
     def getState(self):
@@ -30,18 +33,26 @@ class babyDetails(object):
     def getBirthCount(self):
         return self.birthCount
 
-with zipfile.ZipFile('fixtures/namesbystate.zip') as namesbystate:
-    for filename in namesbystate.namelist():
-        if not os.path.isdir(filename) and filename != 'StateReadMe.pdf':
-            # if m.endswith('.mp3'):
-            # read the file
-            with namesbystate.open(filename) as f:
-                for line in f:
-                    # processing line by line
-                    baby = babyDetails(line)
-                    print baby.getBirthCount()
+def dataUnload(file_name, yearOfBirth):
+    with zipfile.ZipFile(file_name) as namesbystate:
+        for filename in namesbystate.namelist():
+            if not os.path.isdir(filename) and filename != 'StateReadMe.pdf':
+                # if m.endswith('.mp3'):
+                # read the file
+                with namesbystate.open(filename) as f:
+                    for line in f:
+                        # processing line by line
+                        baby = babyDetails(line)
+                        if baby.getYear() in '2013':
+                            bornInYear.append(baby.getAll())
 
-sorted_list = sorted(dictionary_namecount.items(), key=operator.itemgetter(1))
-sorted_list.reverse()
-for loop_var in range(5):
-    print sorted_list[loop_var]
+
+dataUnload(fixtureName, '2013')
+for item in bornInYear:
+    print item
+
+
+# sorted_list = sorted(dictionary_namecount.items(), key=operator.itemgetter(1))
+# sorted_list.reverse()
+# for loop_var in range(5):
+#     print sorted_list[loop_var]
