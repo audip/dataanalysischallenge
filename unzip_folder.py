@@ -18,11 +18,12 @@ with zipfile.ZipFile('namesbystate.zip') as namesbystate:
                     # processing line by line
                     str = line.split(',')
                     baby_name = str[3]
+                    birth_count = str[4]
                     progress = progress + 1
                     if baby_name not in dictionary_namecount:
-                        dictionary_namecount[baby_name] = 1
+                        dictionary_namecount[baby_name] = birth_count
                     else:
-                        dictionary_namecount[baby_name] += 1
+                        dictionary_namecount[baby_name] += birth_count
 
 # def keywithmaxval(d):
 #     # Fastest key value sorter approach
