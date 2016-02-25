@@ -110,7 +110,7 @@ def plotsGraph(list1, list2, graphTitle, xAxisTitle, yAxisTitle):
         yaxis=dict(
             title=yAxisTitle
         ), showlegend=True, legend=dict(
-            x=0.9,
+            x=1,
             y=1
         )
     )
