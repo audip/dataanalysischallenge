@@ -61,6 +61,9 @@ def dataUnload(file_name):
     temperatureList = []
     timeList = []
     heatFlowList = []
+    heatCapacityList = []
+    purgeFlowList = []
+    pressureList = []
     counter = 0
     lineToRead = 0
     for filename in os.listdir(path):
@@ -93,14 +96,21 @@ def dataUnload(file_name):
                             timeList.append(industrialData.getTime())
                             temperatureList.append(industrialData.getTemperature())
                             heatFlowList.append(industrialData.getHeatFlow())
+                            heatCapacityList.append(industrialData.getheatCapacity())
+                            purgeFlowList.append(industrialData.getSamplePurgeFlow())
+                            pressureList.append(industrialData.getPressure())
+
                             # industry.printsOutput()
                     # if counter > 10:
                     #     break
 
     plot1 = plotsGraph(timeList, temperatureList, 'Industrial: Temperature v/s Time', 'Time', 'Temperature')
-    plot2 = plotsGraph(timeList, heatFlowList, 'Industrial: Heat Flow v/s Time', 'Time', 'Hear Flow')
+    plot2 = plotsGraph(timeList, heatFlowList, 'Industrial: Heat Flow v/s Time', 'Time', 'Heat Flow')
+    plot3 = plotsGraph(timeList, heatCapacityList, 'Industrial: Heat Capacity v/s Time', 'Time', 'Heat Capacity')
+    plot4 = plotsGraph(timeList, purgeFlowList, 'Industrial: Purge Flow v/s Time', 'Time', 'Purge Flow')
+    plot5 = plotsGraph(timeList, pressureList, 'Industrial: Pressure v/s Time', 'Time', 'Pressure')
     # Heat Flow vs Time
-    reportToHTML(plot1, plot2)
+    reportToHTML(plot1, plot2, plot3, plot4, plot5)
     # print timeList
     # print temperatureList
     # print heatFlowList
@@ -130,7 +140,7 @@ def plotsGraph(list1, list2, graphTitle, xAxisTitle, yAxisTitle):
     plot_url = py.plot(fig, filename=graphTitle, sharing='public', auto_open=False)
     return plot_url
 
-def reportToHTML(plot_url1, plot_url2):
+def reportToHTML(plot_url1, plot_url2,plot_url3, plot_url4, plot_url5):
     html_string = '''
     <html>
         <head>
@@ -196,11 +206,29 @@ def reportToHTML(plot_url1, plot_url2):
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
                             src="''' + plot_url1 + '''.embed?width=800&height=450"></iframe>
                                 </div>
-                                <h1 style="margin-top:100px">Plot 2: Industrial Temperature vs Time</h1>
+                                <h1 style="margin-top:100px">Plot 2: Industrial Heat Flow vs Time</h1>
 
                                 <div style="margin:0 auto 50 auto">
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
                             src="''' + plot_url2 + '''.embed?width=800&height=450"></iframe>
+                                </div>
+                                <h1 style="margin-top:100px">Plot 3: Industrial Heat Capacity vs Time</h1>
+
+                                <div style="margin:0 auto 50 auto">
+                                    <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
+                            src="''' + plot_url3 + '''.embed?width=800&height=450"></iframe>
+                                </div>
+                                <h1 style="margin-top:100px">Plot 4: Industrial Purge Flow vs Time</h1>
+
+                                <div style="margin:0 auto 50 auto">
+                                    <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
+                            src="''' + plot_url4 + '''.embed?width=800&height=450"></iframe>
+                                </div>
+                                <h1 style="margin-top:100px">Plot 5: Industrial Pressure vs Time</h1>
+
+                                <div style="margin:0 auto 50 auto">
+                                    <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
+                            src="''' + plot_url5 + '''.embed?width=800&height=450"></iframe>
                                 </div>
                             </div>
                         </div>
