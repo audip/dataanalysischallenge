@@ -254,7 +254,7 @@ def reportToHTML(plot_url1, plot_url2,plot_url3, plot_url4, plot_url5):
             </body>
     </html>'''
 
-    filename = 'reports/problem3.html'
+    filename = 'reports/graph.html'
     if not os.path.exists(os.path.dirname(filename)):
         try:
             os.makedirs(os.path.dirname(filename))
