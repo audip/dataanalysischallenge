@@ -7,6 +7,8 @@ import operator
 
 fixtureName = 'fixtures/namesbystate.zip'
 
+consoleLogger = []
+
 class babyDetails(object):
 
     def __init__(self):
@@ -48,6 +50,7 @@ def dataUnload(file_name, yearOfBirth):
     """ Unwraps data from the dataset using filename """
     bornInYear = []
     print "2. File read initiated"
+    consoleLogger.append("2. File read initiated")
     # Unzips the file and return babies born in 2013
     with zipfile.ZipFile(file_name) as namesbystate:
         for filename in namesbystate.namelist():
@@ -61,11 +64,13 @@ def dataUnload(file_name, yearOfBirth):
                         if baby.getYear() in yearOfBirth:
                             bornInYear.append(baby.getAll())
     print "3. File read completed"
+    consoleLogger.append("3. File read completed")
     return bornInYear
 
 def findNameCount(babyList = []):
     """ Finds babies born in 2013 and maps them in a dictionary """
     print "4. Finding name counts of babies"
+    consoleLogger.append("4. Finding name counts of babies")
     dictionary_baby = {}
     for babyData in babyList:
         baby = babyDetails(babyData)
@@ -97,11 +102,13 @@ def findNameCount(babyList = []):
                 dictionary_baby[baby.getName()] = "M::"+str(maleCount)+"::F::"+str(femaleCount)
 
     print "5. Finding completed of babies name counts"
+    consoleLogger.append("5. Finding completed of babies name counts")
     return dictionary_baby
 
 def findAmbigiousNames(dict_namecount={}):
     """ For all names, checks for names with maleCount, femaleCount greater than zero and sums it up  """
     print "6. Finding ambigious names with counts greater than 0"
+    consoleLogger.append("6. Finding ambigious names with counts greater than 0")
     maleCount = 0
     femaleCount = 0
     totalCount = 0
@@ -116,23 +123,33 @@ def findAmbigiousNames(dict_namecount={}):
             dictionary_baby[key] = totalCount
 
     print "7. Found all the ambigious names"
+    consoleLogger.append("7. Found all the ambigious names")
+
     return dictionary_baby
 
 def top5(dict_namecount = {}):
     """ Takes dictionary as input and prints top five name """
     print "8. Sorting the list to find the top 5"
+    consoleLogger.append("8. Sorting the list to find the top name")
     sorted_list = sorted(dict_namecount.items(), key=operator.itemgetter(1))
     sorted_list.reverse()
     for loop_var in range(5):
         print sorted_list[loop_var]
+    return sorted_list
 
 def main():
+    consoleLogger.append("9 steps in total")
+    consoleLogger.append("1. Main program initiated")
     print "9 steps in total"
     print "1. Main program initiated"
     babyBornInYear = dataUnload(fixtureName, '2013')
     dict_namecount = findNameCount(babyBornInYear)
     dict_ambigious = findAmbigiousNames(dict_namecount)
-    top5(dict_ambigious)
+    result = top5(dict_ambigious)
+    consoleLogger.append("Result is: ")
+    for loop_var in range(5):
+        consoleLogger.append(result[loop_var])
+    consoleLogger.append("9. Main program finished")
     print "9. Main program finished"
 
 if __name__ == "__main__":main()
