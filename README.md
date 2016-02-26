@@ -16,12 +16,12 @@ Use the data provided in the attachment for this question. The data of interest 
 
 ## User Stories
 
-The following user stories have been implemented:
+The following **required** user stories have been implemented:
 - [x] User can find most popular baby name of all time from the dataset: http://www.ssa.gov/oact/babynames/state/namesbystate.zip
 - [x] User can see top 5 most gender ambigious names in 2013 (Optional)
 - [x] User can view HTML reports with plots of actual data as received from log file
 
-The following additional (optional) user stories have been implemented:
+The following **additional** (optional) user stories have been implemented:
 - [x] Implement robust project structure for working in fast-paced team setting
 - [x] Implements Plotly (http://plot.ly) API for modern graph plotting
 - [x] Implements classes & creates objects for better reusability
@@ -39,3 +39,19 @@ The following additional (optional) user stories have been implemented:
 ## Testing
 
 - Run in `dataanalysischallenge/`: `nosetests -v --with-coverage --cover-package=dataanalysischallenge --cover-inclusive --cover-erase tests`
+
+## License
+
+    Copyright 2016 Aditya Purandare
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
