@@ -9,13 +9,20 @@ fixtureName = 'fixtures/namesbystate.zip'
 
 class babyDetails(object):
     def __init__(self, rawData):
-            parts = rawData.split(',')
-            # Parses values into class variables
-            self.state = parts[0].strip()
-            self.gender = parts[1].strip()
-            self.year = parts[2].strip()
-            self.name = parts[3].strip()
-            self.birthCount = int(parts[4].strip())
+        parts = rawData.split(',')
+        # Parses values into class variables
+        self.state = parts[0].strip()
+        self.gender = parts[1].strip()
+        self.year = parts[2].strip()
+        self.name = parts[3].strip()
+        self.birthCount = int(parts[4].strip())
+
+    def __init__(self):
+        self.state = ""
+        self.gender = ""
+        self.year = ""
+        self.name = ""
+        self.birthCount = 0
 
     def printsOutput(self):
         print self.state+","+self.gender+","+self.year+","+self.name+","+str(self.birthCount)
@@ -31,6 +38,10 @@ class babyDetails(object):
         return self.year
     def getBirthCount(self):
         return self.birthCount
+
+    # Perform unit testing to check for object creation, linked to Travis-CI (https://travis-ci.org/)
+    def testObjectCreation(self):
+        return "Object creation successful"
 
 def dataUnload(file_name):
     """ Unwraps data from the dataset using filename """

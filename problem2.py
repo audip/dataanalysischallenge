@@ -17,6 +17,13 @@ class babyDetails(object):
             self.name = parts[3].strip()
             self.birthCount = int(parts[4].strip())
 
+    def __init__(self):
+        self.state = ""
+        self.gender = ""
+        self.year = ""
+        self.name = ""
+        self.birthCount = 0
+
     def printsOutput(self):
         print self.state+","+self.gender+","+self.year+","+self.name+","+str(self.birthCount)
     def getAll(self):
@@ -31,6 +38,10 @@ class babyDetails(object):
         return self.year
     def getBirthCount(self):
         return self.birthCount
+
+    # Perform unit testing to check for object creation, linked to Travis-CI (https://travis-ci.org/)
+    def testObjectCreation(self):
+        return "Object creation successful"
 
 def dataUnload(file_name, yearOfBirth):
     """ Unwraps data from the dataset using filename """

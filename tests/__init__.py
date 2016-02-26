@@ -8,11 +8,18 @@ class InitializationTests(unittest.TestCase):
         """
         self.assertEqual(2+2, 4)
 
-    def test_import(self):
+    def test_objectCreateProblem1(self):
         """
-        Ensure the test suite can import our module
+        Checks for object creation for class in Problem 1
         """
-        try:
-            import dataananlysischallenge
-        except ImportError:
-            self.fail("Was not able to import the emailgraph")
+        from problem1 import babyDetails
+        testBaby = babyDetails()
+        self.assertEqual(testBaby.testObjectCreation(), "Object creation successful")
+
+    def test_objectCreateProblem2(self):
+        """
+        Checks for object creation for class in Problem 2
+        """
+        from problem2 import babyDetails
+        testBaby = babyDetails()
+        self.assertEqual(testBaby.testObjectCreation(), "Object creation successful")
