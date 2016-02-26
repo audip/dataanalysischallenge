@@ -44,6 +44,10 @@ class industrialDetails(object):
         return self.samplePurgeFlow
     def getPressure(self):
         return self.pressure
+        
+    # Perform unit testing to check for object creation, linked to Travis-CI (https://travis-ci.org/)
+    def testObjectCreation(self):
+        return "Object creation successful"
 
 def dataUnload(file_name):
     # Unzips the file and return industrial data

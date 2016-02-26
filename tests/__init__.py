@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import unittest
 
 class InitializationTests(unittest.TestCase):
@@ -23,3 +25,11 @@ class InitializationTests(unittest.TestCase):
         from problem2 import babyDetails
         testBaby = babyDetails()
         self.assertEqual(testBaby.testObjectCreation(), "Object creation successful")
+
+    def test_objectCreateProblem3(self):
+        """
+        Checks for object creation for class in Problem 3
+        """
+        from problem3 import industrialDetails
+        testIndustrial = industrialDetails()
+        self.assertEqual(testIndustrial.testObjectCreation(), "Object creation successful")
