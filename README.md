@@ -2,6 +2,9 @@
 
 Challenge for developing most efficient, robust and quality code for the problems.
 
+[![Build Status](https://travis-ci.com/audip/dataanalysischallenge.svg?token=GHivzknmxHfYWrAfnY58&branch=master)](https://travis-ci.com/audip/dataanalysischallenge)
+https://travis-ci.com/audip/dataanalysischallenge.svg?token=GHivzknmxHfYWrAfnY58&branch=master
+
 ## Problem Statement
 
 The data can be downloaded in zip format from:
