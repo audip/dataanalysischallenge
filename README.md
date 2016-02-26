@@ -23,6 +23,8 @@ The following additional/optional user stories have been implemented:
 - [x] Implements Plotly (http://plot.ly) API for modern graph plotting
 - [x] Implements classes & creates objects for better reusability
 - [x] Enforces validation for input files
+- [x] Implements version control system (Git) to keep track of documents and ability to revert back
+- [x] Performs unit testing to check for any break in builds and introduction of any bugs (Testing script included)
 
 ## Installation
 
