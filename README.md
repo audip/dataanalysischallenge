@@ -19,14 +19,15 @@ Use the data provided in the attachment for this question. The data of interest 
 
 ## User Stories
 
-The following **required** user stories have been implemented:
+The following **required** stories have been implemented:
 - [x] User can find most popular baby name of all time from the dataset: http://www.ssa.gov/oact/babynames/state/namesbystate.zip
 - [x] User can see top 5 most gender ambigious names in 2013 (Optional)
 - [x] User can view HTML reports with plots of actual data as received from log file
 
-The following **additional** (optional) user stories have been implemented:
+The following **additional** (optional) stories have been implemented:
 - [x] Implement robust project structure for working in fast-paced team setting
 - [x] Implements Plotly (http://plot.ly) API for modern graph plotting
+- [x] Presents interactive graphs with zooming capabilities
 - [x] Follows object oriented programming paradigm through creation and use of class objects
 - [x] Enforces validation for input files by checking against unacceptable file format
 - [x] Implements version control system (Git) to keep track of documents and ability to revert back
@@ -38,7 +39,9 @@ The following **additional** (optional) user stories have been implemented:
 ## Installation
 
 1. Downloading the zip archive, consisting of powerful project structure for medium to large projects
-2. Run the script for dependencies to be installed: `pip install -r requirements.txt`
+2. Run pip for dependencies to be installed: `pip install -r requirements.txt`
+3. Execute python 2.7 scripts: `python script_name.py`
+4. Reports can be viewed in `./dashboard/problem3.html`
 
 ## Testing
 
