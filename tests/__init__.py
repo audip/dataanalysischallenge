@@ -2,8 +2,6 @@
 
 import unittest
 
-
-
 class InitializationTests(unittest.TestCase):
 
     def test_initialization(self):
@@ -17,7 +15,7 @@ class InitializationTests(unittest.TestCase):
         Checks for object creation for class in Problem 1
         """
         from problem1 import babyDetails
-        testBaby = babyDetails()
+        testBaby = babyDetails("a,b,c,d,0")
         self.assertEqual(testBaby.testObjectCreation(), "Object creation successful")
 
     def test_objectCreateProblem2(self):
@@ -25,7 +23,7 @@ class InitializationTests(unittest.TestCase):
         Checks for object creation for class in Problem 2
         """
         from problem2 import babyDetails
-        testBaby = babyDetails()
+        testBaby = babyDetails("a,b,c,d,0")
         self.assertEqual(testBaby.testObjectCreation(), "Object creation successful")
 
     def test_objectCreateProblem3(self):
@@ -33,5 +31,5 @@ class InitializationTests(unittest.TestCase):
         Checks for object creation for class in Problem 3
         """
         from problem3 import industrialDetails
-        testIndustrial = industrialDetails()
+        testIndustrial = industrialDetails("0.0\t0.0\t0.0\t0.0\t0.0\t0.0")
         self.assertEqual(testIndustrial.testObjectCreation(), "Object creation successful")
