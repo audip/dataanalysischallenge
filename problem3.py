@@ -11,22 +11,29 @@ path = 'fixtures/'
 
 class industrialDetails(object):
     def __init__(self, rawData):
-            raw = rawData.strip()
-            parts = raw.split('\t')
-            # Parses values into class variables
-            # for part in parts:
-            #     if 'E-' in part:
-            #         value = part.rstrip('\r\t').split('E-')
-            #         powerOf = pow(10,(-1*int(value[1])))
-            #         part = float(value[0]) * powerOf
+        raw = rawData.strip()
+        parts = raw.split('\t')
+        # Parses values into class variables
+        # for part in parts:
+        #     if 'E-' in part:
+        #         value = part.rstrip('\r\t').split('E-')
+        #         powerOf = pow(10,(-1*int(value[1])))
+        #         part = float(value[0]) * powerOf
 
-            self.time = float(parts[0].strip())
-            self.temperature = float(parts[1].strip())
-            self.heatFlow = float(parts[2].strip())
-            self.heatCapacity = float(parts[3].strip())
-            self.samplePurgeFlow = float(parts[4].strip())
-            self.pressure = float(parts[5].strip())
+        self.time = float(parts[0].strip())
+        self.temperature = float(parts[1].strip())
+        self.heatFlow = float(parts[2].strip())
+        self.heatCapacity = float(parts[3].strip())
+        self.samplePurgeFlow = float(parts[4].strip())
+        self.pressure = float(parts[5].strip())
 
+    def __init__(self):
+        self.time = 0.0
+        self.temperature = 0.0
+        self.heatFlow = 0.0
+        self.heatCapacity = 0.0
+        self.samplePurgeFlow = 0.0
+        self.pressure = 0.0
 
     def printsOutput(self):
         print str(self.time)+","+str(self.temperature)+","+str(self.heatFlow)+","+str(self.heatCapacity)+","+str(self.samplePurgeFlow)+","+str(self.pressure)
@@ -44,7 +51,7 @@ class industrialDetails(object):
         return self.samplePurgeFlow
     def getPressure(self):
         return self.pressure
-        
+
     # Perform unit testing to check for object creation, linked to Travis-CI (https://travis-ci.org/)
     def testObjectCreation(self):
         return "Object creation successful"

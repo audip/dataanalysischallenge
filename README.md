@@ -25,6 +25,7 @@ The following additional/optional user stories have been implemented:
 - [x] Enforces validation for input files
 - [x] Implements version control system (Git) to keep track of documents and ability to revert back
 - [x] Performs unit testing to check for any break in builds and introduction of any bugs (Testing script included)
+- [x] Deploys on Continous Integration (CI) platform - Travis-CI, for continously testing the builds being deployed and reporting failures.
 
 ## Installation
 
@@ -33,14 +34,4 @@ The following additional/optional user stories have been implemented:
 
 ## Testing
 
-nosetests -v --with-coverage --cover-package=dataanalysischallenge --cover-inclusive --cover-erase tests
-
-## Submission Instructions
-
-Try to use Python or R for scripting for the first two questions as we are using these two languages in most of our work. ipython notebook is also accepted if you are using python. Do NOT assume i have the data-set saved locally. The script should be elegant to download the data and do the analysis. Be sure to include code comments so that i know what you are trying to achieve. Once finished, please email the script and the HTML file to ramaranjanruj@tamu.edu. Do not include the downloaded data-set or any other material in the attachment. The deadline for the submission is Friday (02/26) 23:59 PM.
-
-Feel free to ask if you have any queries. Thanks and i look forward to reviewing your work. All the best!
-
-In the meantime, please find a link to the Materials Data Curation System(MDCS) that we are seeking to adapt and deploy within TAMU.
-
-https://github.com/usnistgov/MDCS
+- Run in `dataanalysischallenge/`: `nosetests -v --with-coverage --cover-package=dataanalysischallenge --cover-inclusive --cover-erase tests`
