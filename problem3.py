@@ -255,7 +255,7 @@ def reportToHTML(plot_url1, plot_url2,plot_url3, plot_url4, plot_url5):
             </body>
     </html>'''
 
-    filename = 'reports/problem3.html'
+    filename = 'dashboard/problem3.html'
     if not os.path.exists(os.path.dirname(filename)):
         try:
             os.makedirs(os.path.dirname(filename))
@@ -266,7 +266,7 @@ def reportToHTML(plot_url1, plot_url2,plot_url3, plot_url4, plot_url5):
         f.write(html_string)
         f.close()
 
-    print "Plot complete, report available at ./reports/problem3.html"
+    print "Plot complete, report available at ./dashboard/problem3.html"
     # webbrowser.open(filename)
     # full_path = os.getcwd()+'/'+filename
     # print full_path

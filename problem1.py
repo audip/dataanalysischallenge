@@ -6,8 +6,6 @@ import zipfile
 import operator
 import requests
 
-# fixtureName = 'fixtures/namesbystate.zip'
-
 class babyDetails(object):
 
     def __init__(self):
@@ -55,7 +53,6 @@ def fileDownloader(download_url):
         except OSError as exc: # Guard against race condition
             if exc.errno != errno.EEXIST:
                 raise
-    print local_filename
     r = requests.get(download_url, stream=True)
     with open(local_filename, 'wb') as f:
         for chunk in r.iter_content(chunk_size=1024):
@@ -68,13 +65,13 @@ def dataUnload(file_name):
     """ Unwraps data from the dataset using filename """
     dictionary_namecount = {}
     print "4. File read initiated"
-    # Unzips the file and return babies born in 2013
-    with zipfile.ZipFile(file_name) as namesbystate:
-        for filename in namesbystate.namelist():
+    # Unzips the file and return babies with birth counts
+    with zipfile.ZipFile(file_name) as namesByState:
+        for filename in namesByState.namelist():
             extension = os.path.splitext(filename)[1][1:].strip().lower()
             if not os.path.isdir(filename) and extension == 'txt':
                 # read the file & validates for txt files only
-                with namesbystate.open(filename) as f:
+                with namesByState.open(filename) as f:
                     for line in f:
                         # processing line by line
                         baby = babyDetails(line)
