@@ -9,7 +9,7 @@ body {
     color: #777
 }
 .text-primary {
-    color: #ffffff
+    color: #FA4616
 }
 p {
     font-size: 14px;
@@ -26,13 +26,13 @@ a.active {
     outline: 0
 }*/
 a {
-    color: #ffffff
+    color: #FA4616
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-    color: #fec503
+    color: #ffffff
 }
 h1,
 h2,
@@ -55,7 +55,7 @@ h6 {
 }
 .btn-primary {
     color: #fff;
-    background-color: #ffffff;
+    background-color: #FA4616;
     border-color: #ffffff;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
@@ -67,8 +67,8 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #fec503;
-    border-color: #f6bf01;
+    background-color: #FA4616;
+    border-color: #fff;
 
 }
 .btn-primary:active,
@@ -96,11 +96,11 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-primary .badge {
     color: #ffffff;
-    background-color: #fff
+    background-color: #FA4616
 }
 .btn-xl {
     color: #fff;
-    background-color: #ffffff;
+    background-color: #FA4616;
     border-color: #ffffff;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
@@ -115,7 +115,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
     color: #fff;
-    background-color: #fec503;
+    background-color: #FA4616;
     border-color: #f6bf01
 }
 .btn-xl:active,
@@ -138,19 +138,19 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-    background-color: #ffffff;
+    background-color: #FA4616;
     border-color: #ffffff
 }
 .btn-xl .badge {
     color: #ffffff;
-    background-color: #fff
+    background-color: #FA4616
 }
 .navbar-default {
     background-color: #222;
     border-color: transparent
 }
 .navbar-default .navbar-brand {
-    color: #ffffff;
+    color: #000000;
     font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive
 }
 .navbar-default .navbar-brand:hover,
