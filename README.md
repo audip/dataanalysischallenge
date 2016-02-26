@@ -35,6 +35,7 @@ The following **additional** (optional) stories have been implemented:
 - [x] Deploys on Continous Integration (CI) platform - Travis-CI, for continously testing the builds being deployed and reporting failures.
 - [x] Builds a dashboard for easily viewing reports, based on Twitter's bootstrap framework
 - [x] Implements coding best practices and styling conventions as per [Python Style Guide] (http://docs.python-guide.org/en/latest/)
+- [x] Deploys dashboard on Heroku Cloud, http://data-analysis-aditya.herokuapp.com
 
 ## Installation
 
