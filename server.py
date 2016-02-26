@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, render_template
 import os
 
 app = Flask(__name__)
@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def dashboard():
     """Respond with dashboard web page"""
-    return redirect("./dashboard/index.html", code=302)
+    return render_template("index.html", 'Title')
+    # return redirect("./dashboard/index.html", code=302)
 
 @app.route('/problem1')
 def problem1():
