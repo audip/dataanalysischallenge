@@ -8,6 +8,14 @@ import operator
 fixtureName = 'fixtures/namesbystate.zip'
 
 class babyDetails(object):
+
+    def __init__(self):
+        self.state = ""
+        self.gender = ""
+        self.year = ""
+        self.name = ""
+        self.birthCount = 0
+
     def __init__(self, rawData):
         parts = rawData.split(',')
         # Parses values into class variables
@@ -16,13 +24,6 @@ class babyDetails(object):
         self.year = parts[2].strip()
         self.name = parts[3].strip()
         self.birthCount = int(parts[4].strip())
-
-    def __init__(self):
-        self.state = ""
-        self.gender = ""
-        self.year = ""
-        self.name = ""
-        self.birthCount = 0
 
     def printsOutput(self):
         print self.state+","+self.gender+","+self.year+","+self.name+","+str(self.birthCount)
@@ -57,7 +58,7 @@ def dataUnload(file_name):
                     for line in f:
                         # processing line by line
                         baby = babyDetails(line)
-                        if int(baby.getYear()) >= 1915:
+                        if int(baby.getYear()) >= 1915 and int(baby.getYear()) <= 2014:
                             if baby.getName() not in dictionary_namecount:
                                 dictionary_namecount[baby.getName()] = baby.getBirthCount()
                             else:
@@ -66,8 +67,8 @@ def dataUnload(file_name):
     return dictionary_namecount
 
 def top(dict_namecount = {}):
-    """ Takes dictionary as input and prints top five name """
-    print "4. Sorting the list to find the top 5"
+    """ Takes dictionary as input and prints top name """
+    print "4. Sorting the list to find the top name"
     sorted_list = sorted(dict_namecount.items(), key=operator.itemgetter(1))
     sorted_list.reverse()
     for loop_var in range(1):
