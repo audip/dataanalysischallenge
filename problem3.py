@@ -119,7 +119,8 @@ def plotsGraph(list1, list2, graphTitle, xAxisTitle, yAxisTitle):
     trace = go.Scatter(
         x = list1,
         y = list2,
-        name= 'Trace'
+        name= 'Trace',
+        fill='tozeroy'
     )
     data = [trace]
 
