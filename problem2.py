@@ -8,14 +8,6 @@ import operator
 fixtureName = 'fixtures/namesbystate.zip'
 
 class babyDetails(object):
-    def __init__(self, rawData):
-            parts = rawData.split(',')
-            # Parses values into class variables
-            self.state = parts[0].strip()
-            self.gender = parts[1].strip()
-            self.year = parts[2].strip()
-            self.name = parts[3].strip()
-            self.birthCount = int(parts[4].strip())
 
     def __init__(self):
         self.state = ""
@@ -23,6 +15,15 @@ class babyDetails(object):
         self.year = ""
         self.name = ""
         self.birthCount = 0
+
+    def __init__(self, rawData):
+        parts = rawData.split(',')
+        # Parses values into class variables
+        self.state = parts[0].strip()
+        self.gender = parts[1].strip()
+        self.year = parts[2].strip()
+        self.name = parts[3].strip()
+        self.birthCount = int(parts[4].strip())
 
     def printsOutput(self):
         print self.state+","+self.gender+","+self.year+","+self.name+","+str(self.birthCount)

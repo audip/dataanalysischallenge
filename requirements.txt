@@ -1,3 +1,4 @@
 requests
 plotly
 nose
+coverage
