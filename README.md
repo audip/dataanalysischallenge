@@ -27,7 +27,7 @@ The following **required** user stories have been implemented:
 The following **additional** (optional) user stories have been implemented:
 - [x] Implement robust project structure for working in fast-paced team setting
 - [x] Implements Plotly (http://plot.ly) API for modern graph plotting
-- [x] Implements classes & creates objects for better reusability
+- [x] Follows object oriented programming paradigm through creation and use of class objects
 - [x] Enforces validation for input files by checking against unacceptable file format
 - [x] Implements version control system (Git) to keep track of documents and ability to revert back
 - [x] Performs unit testing to check for any break in builds and introduction of any bugs (Testing script included)
