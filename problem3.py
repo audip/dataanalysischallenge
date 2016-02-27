@@ -105,7 +105,7 @@ def dataUnload(file_name):
                     #     break
 
     plot1 = plotsGraph(timeList, temperatureList, 'Industrial: Temperature v/s Time', 'Time', 'Temperature')
-    plot2 = plotsGraph(timeList, heatFlowList, 'Industrial: Heat Flow v/s Time', 'Time', 'Heat Flow')
+    plot2 = plotsGraph(temperatureList, heatFlowList, 'Industrial: Heat Flow v/s Temperature', 'Temperature', 'Heat Flow')
     plot3 = plotsGraph(timeList, heatCapacityList, 'Industrial: Heat Capacity v/s Time', 'Time', 'Heat Capacity')
     plot4 = plotsGraph(timeList, purgeFlowList, 'Industrial: Purge Flow v/s Time', 'Time', 'Purge Flow')
     plot5 = plotsGraph(timeList, pressureList, 'Industrial: Pressure v/s Time', 'Time', 'Pressure')
@@ -183,13 +183,13 @@ def reportToHTML(plot_url1, plot_url2,plot_url3, plot_url4, plot_url5):
                                             <a href="#page-top"></a>
                                         </li>
                                         <li>
-                                            <a class="page-scroll" href="#"><i class="fa fa-lg fa-archive"></i> Problem 1</a>
+                                            <a class="page-scroll" href="problem1.html"><i class="fa fa-lg fa-archive"></i> Problem 1</a>
                                         </li>
                                         <li>
-                                            <a class="page-scroll" href="#"><i class="fa fa-lg fa-archive"></i> Problem 2</a>
+                                            <a class="page-scroll" href="problem2.html"><i class="fa fa-lg fa-archive"></i> Problem 2</a>
                                         </li>
                                         <li>
-                                            <a class="page-scroll" href="#"><i class="fa fa-lg fa-archive"></i> Problem 3</a>
+                                            <a class="page-scroll" href="index.html"><i class="fa fa-lg fa-archive"></i> Problem 3</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -201,31 +201,32 @@ def reportToHTML(plot_url1, plot_url2,plot_url3, plot_url4, plot_url5):
                         <!-- Header -->
                         <div class="header">
                             <div class="container">
-                                <h1 style="margin-top:100px">Plot 1: Industrial Temperature vs Time</h1>
+                                <h1 style="margin-top:100px">Plot 1: Industrial- Temperature vs Time</h1>
 
                                 <div style="margin:auto;">
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
                             src="''' + plot_url1 + '''.embed?width=800&height=450"></iframe>
                                 </div>
-                                <h1 style="margin-top:100px">Plot 2: Industrial Heat Flow vs Time</h1>
+                                <h1 style="margin-top:100px">Plot 2: Industrial- Heat Flow vs Temperature</h1>
 
                                 <div style="margin:0 auto 50 auto">
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
                             src="''' + plot_url2 + '''.embed?width=800&height=450"></iframe>
                                 </div>
-                                <h1 style="margin-top:100px">Plot 3: Industrial Heat Capacity vs Time</h1>
+                                <h1 style="margin-top:100px">Plot 3: Industrial- Heat Capacity vs Time</h1>
 
                                 <div style="margin:0 auto 50 auto">
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
                             src="''' + plot_url3 + '''.embed?width=800&height=450"></iframe>
                                 </div>
-                                <h1 style="margin-top:100px">Plot 4: Industrial Purge Flow vs Time</h1>
+
+                                <h1 style="margin-top:100px">Plot 4: Industrial- Purge Flow vs Time</h1>
 
                                 <div style="margin:0 auto 50 auto">
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
                             src="''' + plot_url4 + '''.embed?width=800&height=450"></iframe>
                                 </div>
-                                <h1 style="margin-top:100px">Plot 5: Industrial Pressure vs Time</h1>
+                                <h1 style="margin-top:100px">Plot 5: Industrial- Pressure vs Time</h1>
 
                                 <div style="margin:0 auto 50 auto">
                                     <iframe width="800" height="450" frameborder="0" seamless="seamless" scrolling="no"
