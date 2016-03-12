@@ -4,7 +4,6 @@ Challenge for developing most efficient, robust and implements high-quality code
 
 [![Build Status](https://travis-ci.org/audip/dataanalysischallenge.svg?branch=master)](https://travis-ci.org/audip/dataanalysischallenge)
 [![Code Climate](https://codeclimate.com/repos/56cd6c0d7220a51efe00b887/badges/52444d49df7d3569be4d/gpa.svg)](https://codeclimate.com/repos/56cd6c0d7220a51efe00b887/feed)
-[![Stories in Ready](https://badge.waffle.io/audip/dataanalysichallenge.png?label=ready&title=Ready)](https://waffle.io/audip/dataanalysichallenge)
 
 https://travis-ci.com/audip/dataanalysischallenge.svg?token=GHivzknmxHfYWrAfnY58&branch=master
 
